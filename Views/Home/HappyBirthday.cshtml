@@ -1,0 +1,30 @@
+﻿@model BirthdayCard.Models.BirthdayInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <h4 class="panel-heading text-center" style="background-color:burlywood; font-size:larger ">Birthday Card Generator</h4>
+    <h5 class="text-center" style="font-size: x-large">Birthday Card Sent!</h5>
+    @using (Html.BeginForm())
+    {
+
+        <p style="text-align:center">From: @Model.SenderName</p>
+        <p style="text-align:center">To: @Model.RecieverName</p>
+        <p style="text-align:center">Message: @Model.Message</p>
+
+    }
+
+    <div>
+        <footer>
+            <p style="text-align:center; font:italic">&copy; 2018 - Czapary Web Services</p>
+        </footer>
+    </div>
+</body>
+</html>

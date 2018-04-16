@@ -1,0 +1,56 @@
+﻿@model BirthdayCard.Models.BirthdayInfo
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BirthdayCardMaker</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+@{
+//Layout = null;
+}
+
+
+<body>
+    <h4 class="panel-heading text-center" style="background-color:burlywood; font-size:larger ">Birthday Card Generator</h4>
+    <h5 class="text-center" style="font-size: x-large">Send A Birthday Card</h5>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+    <center>
+        <p>
+            <label>Sender's Name:</label>@Html.TextBoxFor(t => t.SenderName, new { @class = "form-control", maxlength = 30, style = "width:200px;" })
+        </p>
+        <p>
+            <label>Reciever's Name:</label>
+            @Html.TextBoxFor(t => t.RecieverName, new { @class = "form-control", maxlength = 30, style = "width:200px;" })
+        </p>
+        <p>
+            <label>Birthday Message:</label>
+            @Html.TextBoxFor(t => t.Message, new { @class = "form-control", maxlength = 150, style = "width:500px;" })
+        </p>
+
+
+
+        <input style="text-align:center" class="btn btn-success" type="submit" value="Make My Birthday Card!" />
+
+
+    </center>
+
+
+        <div>
+            <footer>
+                <p style="text-align:center; font-style:italic">&copy; 2018 - Czapary Web Services</p>
+            </footer>
+        </div>
+    }
+</body>
